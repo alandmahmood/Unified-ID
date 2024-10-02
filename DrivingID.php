@@ -47,13 +47,10 @@ if (isset($_GET["did"])) {
 </head>
 
 <body>
-    <!-- Navbar -->
-<?php include 'nav.php'; ?>
-
     <div class=" h-full w-full min-h-screen bg-auto">
         <div class="min-h-full w-full px-36 h-screen">
             <div class="w-full flex flex-row items-center  text-3xl py-4 px-4 font-serif ">
-                <div class="w-auto place-items-start" style="color:black;">
+                <div class="w-auto place-items-start" style="color:white;">
                     Republic of Iraq
                 </div>
                 <div class="w-auto py-4 px-4 place-items-start">
@@ -78,13 +75,13 @@ if (isset($_GET["did"])) {
                         <div class="row ">
                             <div class="col-2 col-md-2 d-flex justify-content-center align-items-center rounded-3xl " style="background-color:#113f59;">
                                 <div class="text-center">
-                                    <img class="w-40 h-40 text-gray-200 " src="images/<?php echo $row["image_name"]; ?>" alt="Person Photo">
+                                    <img class="w-40 h-40 " src="images/<?php echo $row["image_name"]; ?>" alt="Person Photo">
                                     <!-- Card ID paragraph -->
                                     <p class="text" style="color:white;"><?php echo $row["nid"]; ?></p>
                                 </div>
                             </div>
                             <div class="col-7 cold-md-7">
-                                <div class="bg-gray-200 p-4 mx-4 my-8 rounded-md flex text-gray-700">
+                                <div class="bg-gray-200 p-4 mx-4 my-8 rounded-md flex">
                                     <!-- Content on the left -->
                                     <div class="flex-1">
                                         <p class="text-xl mb-2">Full Name: <?php echo $row["full_name"]; ?></p>
@@ -114,9 +111,6 @@ if (isset($_GET["did"])) {
             </div>
         </div>
     </div>
-        <!-- Foooter -->
-<?php include 'footer.php'; ?>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

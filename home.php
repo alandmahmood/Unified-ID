@@ -39,10 +39,7 @@ if (isset($_GET["nid"])) {
 </head>
 
 <body>
-    <!-- Navbar -->
-<?php include 'nav.php'; ?>
-
- <div class="container parent d-flex justify-content-center align-items-center h-100 rounded-3xl">
+    <div class="container parent d-flex justify-content-center align-items-center h-100 rounded-3xl">
         <div class="container bg-gray-200 shadow-lg rounded-3xl w-12/40 h-full " >
             <div class="row">
                 <div class="col-8 d-flex justify-content-center align-items-center rounded-3xl " style="background-color:#113f59;">
@@ -55,15 +52,16 @@ if (isset($_GET["nid"])) {
                     <div class="bg-gray-200 p-4 mx-4 my-8 rounded-md flex">
                         <div class="flex-1" >
                             <a href="addman.php" class="btn btn-outline-primary" role="button" aria-pressed="true">Manual Entry</a>
-                            <a href="" class="btn btn-outline-primary" role="button" aria-pressed="true">Submit a Scan</a>
+                            <a href="" class="btn btn-outline-dark" role="button" aria-pressed="true">Submit a Scan</a>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
-  </div>
-    <!-- Footer -->
-    <?php include 'footer.php'; ?>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
