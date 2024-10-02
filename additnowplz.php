@@ -14,7 +14,7 @@
         $hissdate=$_POST["issue_date_health"];
         $dissdate=$_POST["issue_date_license"];
         
-        $randNum = rand(10,99);
+        $randNum = rand(100,999);
         $nid="N".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($issdate)).$randNum;
         $hid="H".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($hissdate)).$randNum;
         $did="D".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($dissdate)).$randNum;
