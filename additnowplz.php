@@ -19,18 +19,22 @@
         $aid="A".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y');
         
        
-        // $destination = 'images/' . $generatedFileName;
-        // $file = $_FILES['file']['tmp_name'];
+        $filename = $_FILES["file"]['name'];
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $generatedFileName = basename($_FILES["file"]["name"]);
+   
+        $destination = 'images/' . $generatedFileName;
+        $file = $_FILES['file']['tmp_name'];
     
 
         $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
-          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', 'noimage');
+          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', '$generatedFileName');
           INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
           INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');
           INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
             
-        // if (move_uploaded_file($file, $destination)){
+        if (move_uploaded_file($file, $destination)){
         
         if (mysqli_multi_query($conn,$sql)){
             sleep(1);
@@ -38,6 +42,6 @@
         }
         else {
             echo mysqli_error($conn);
-        }
+          }}
     
 ?>
