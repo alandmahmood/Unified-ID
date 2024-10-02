@@ -18,12 +18,12 @@
         $did="D".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($dissdate));
         $aid="A".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y');
         
-        $filename = $_FILES["file"]['name'];
-        $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        $generatedFileName = basename($_FILES["file"]["name"]);
+        // $filename = $_FILES["file"]['name'];
+        // $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        // $generatedFileName = basename($_FILES["file"]["name"]);
    
-        $destination = 'images/' . $generatedFileName;
-        $file = $_FILES['file']['tmp_name'];
+        // $destination = 'images/' . $generatedFileName;
+        // $file = $_FILES['file']['tmp_name'];
     
 
         $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
@@ -33,7 +33,7 @@
           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');
           INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');";
     
-        if (move_uploaded_file($file, $destination)){
+        // if (move_uploaded_file($file, $destination)){
         
         if (mysqli_multi_query($conn,$sql)){
             echo "success";
@@ -42,6 +42,6 @@
         else {
             echo mysqli_error($conn);
         }
-    }
-    else echo "fucking kill me now";
+    // }
+    // else echo "fucking kill me now";
 ?>
