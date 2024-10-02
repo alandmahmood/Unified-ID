@@ -43,12 +43,13 @@
     
         if (move_uploaded_file($file, $destination)){
         
-            if (mysqli_multi_query($conn, $sql)) {
-                echo "Data inserted successfully!";
-            } else {
-                echo "Error inserting data: " . mysqli_error($conn);
-            }
-            
+        if (mysqli_multi_query($conn,$sql)){
+            sleep(5);
+            header("location: index.php");
+        }
+        else {
+            echo mysqli_error($conn);
+        }
     }}
 
     
