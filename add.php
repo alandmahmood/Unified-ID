@@ -14,10 +14,9 @@
         $hissdate=$_POST["issue_date_health"];
         $dissdate=$_POST["issue_date_license"];
         
-        $randomNum=rand(10,99);
-        $nid="N".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($issdate)).$randomNum;
-        $hid="H".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($hissdate)).$randomNum;
-        $did="D".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($dissdate)).$randomNum;
+        $nid="N".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($issdate));
+        $hid="H".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($hissdate));
+        $did="D".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($dissdate));
         $aid="A".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y');
         
         $filename = $_FILES["file"]['name'];
@@ -26,13 +25,7 @@
    
         $destination = 'images/' . $generatedFileName;
         $file = $_FILES['file']['tmp_name'];
-        
-        $checkSql = "SELECT 1 FROM national_id WHERE nid = '$nid' LIMIT 1";
-        $result = mysqli_query($conn, $checkSql);
-
-        if (mysqli_num_rows($result) > 0) {
-            echo "dup";}
-
+    
 
         $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
           ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', '$generatedFileName');
@@ -44,15 +37,12 @@
         if (move_uploaded_file($file, $destination)){
         
         if (mysqli_multi_query($conn,$sql)){
-            sleep(5);
             header("location: index.php");
         }
         else {
             echo mysqli_error($conn);
         }
     }}
-
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,13 +53,11 @@
   <script src="https://cdn.tailwindcss.com/"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <?php include 'nav.php'; ?>
-<div class="max-w-5xl mx-auto">
+<div class="max-w-2xl mx-auto">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="add.php" method="post" enctype="multipart/form-data">
         <!-- national id -->
         <div class="mb-6">
-            <h2 class="text-lg font-semibold mb-4 text-gray-900 ">National ID</h2>
+            <h2 class="text-lg font-semibold mb-4">National ID</h2>
             <div class="grid grid-cols-2 gap-4">
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="firstName">First Name</label>
@@ -159,9 +147,6 @@
         </div>
     </form>
 </div>
-    <!-- Foooter -->
-    <?php include 'footer.php'; ?>
-
 
 
 
