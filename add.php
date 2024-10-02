@@ -44,7 +44,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Image</label>
-                    <input name="file" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file">
+                    <input name="file" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file" enctype="multipart/form-data">
                 </div>
                 <div class="col-span-2 mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="city">City</label>
