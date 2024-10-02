@@ -2,18 +2,18 @@
 
 <?php
     // Get parameters from the form
-    $firstname = mysqli_real_escape_string($conn, $_GET["first_name"]);
-    $lastname = mysqli_real_escape_string($conn, $_GET["last_name"]);
-    $phone = mysqli_real_escape_string($conn, $_GET["phone_number"]);
-    $gender = mysqli_real_escape_string($conn, $_GET["gender"]);
-    $dob = mysqli_real_escape_string($conn, $_GET["date_of_birth"]);
-    $city = mysqli_real_escape_string($conn, $_GET["city"]);
-    $address = mysqli_real_escape_string($conn, $_GET["address"]);
-    $blood = mysqli_real_escape_string($conn, $_GET["blood_type"]);
-    $license_type = mysqli_real_escape_string($conn, $_GET["license_type"]);
-    $issdate = mysqli_real_escape_string($conn, $_GET["issue_date"]);
-    $hissdate = mysqli_real_escape_string($conn, $_GET["issue_date_health"]);
-    $dissdate = mysqli_real_escape_string($conn, $_GET["issue_date_license"]);
+    $firstname = mysqli_real_escape_string($conn, $_POST["first_name"]);
+    $lastname = mysqli_real_escape_string($conn, $_POST["last_name"]);
+    $phone = mysqli_real_escape_string($conn, $_POST["phone_number"]);
+    $gender = mysqli_real_escape_string($conn, $_POST["gender"]);
+    $dob = mysqli_real_escape_string($conn, $_POST["date_of_birth"]);
+    $city = mysqli_real_escape_string($conn, $_POST["city"]);
+    $address = mysqli_real_escape_string($conn, $_POST["address"]);
+    $blood = mysqli_real_escape_string($conn, $_POST["blood_type"]);
+    $license_type = mysqli_real_escape_string($conn, $_POST["license_type"]);
+    $issdate = mysqli_real_escape_string($conn, $_POST["issue_date"]);
+    $hissdate = mysqli_real_escape_string($conn, $_POST["issue_date_health"]);
+    $dissdate = mysqli_real_escape_string($conn, $_POST["issue_date_license"]);
 
     // Generate unique IDs
     $nid = "N" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y', strtotime($issdate));
