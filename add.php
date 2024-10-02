@@ -64,9 +64,9 @@
 </head>
 <body>
     <!-- Navbar -->
-<?php include 'nav.php'; ?>
+    <?php include 'nav.php'; ?>
 <div class="max-w-5xl mx-auto">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="add.php" method="post" enctype="multipart/form-data">
         <!-- national id -->
         <div class="mb-6">
             <h2 class="text-lg font-semibold mb-4 text-gray-900 ">National ID</h2>
