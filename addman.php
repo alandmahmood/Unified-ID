@@ -7,15 +7,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add citizen</title>
   <script src="https://cdn.tailwindcss.com/"></script>
+
+  <style>
+    body {
+            /* Background image as watermark */
+            background-image: url('arms2.png');
+            /* Adjust the URL to your watermark image */
+            background-repeat: repeat;
+            background-color: #074173;
+            /* Adjust opacity as needed */
+            /* Adjust opacity only for the watermark */
+            background-size: 200px 200px;
+            /* Adjust size of watermark and spacing */
+            background-position: 0px 60px;
+            /* Adjust horizontal and vertical space */
+            position: relative;
+            backdrop-filter: blur(3px);
+        }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
+<!-- Navbar -->
 <?php include 'nav.php'; ?>
+
 <div class="max-w-5xl mx-auto">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="additnowplz.php" method="get" enctype="multipart/form-data">
         <!-- national id -->
         <div class="mb-6">
-            <h2 class="text-lg font-semibold mb-4 text-gray-900 ">National ID</h2>
+            <h2 class="text-lg font-semibold mb-4 text-gray-900">National ID</h2>
             <div class="grid grid-cols-2 gap-4">
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="firstName">First Name</label>
@@ -27,7 +46,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber">Phone Number</label>
-                    <input name="phone_number" class=" form-control appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber" type="tel" placeholder="Phone Number" required>
+                    <input name="phone_number" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber" type="tel" placeholder="Phone Number" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">Gender</label>
