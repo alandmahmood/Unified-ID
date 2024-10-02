@@ -34,7 +34,7 @@
         
         if (mysqli_multi_query($conn,$sql)){
             sleep(5);
-            echo "succ";
+            header("location: index.php");
         }
         else {
             echo mysqli_error($conn);
