@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="max-w-2xl mx-auto">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="additnowplz.php" method="post" enctype="multipart/form-data">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="additnowplz.php" method="get" enctype="multipart/form-data">
         <!-- national id -->
         <div class="mb-6">
             <h2 class="text-lg font-semibold mb-4">National ID</h2>
