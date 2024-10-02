@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS universal_id;
 CREATE DATABASE universal_id;
 USE universal_id;
 
-CREATE TABLE national_id(nid VARCHAR(11) PRIMARY KEY, 
+CREATE TABLE national_id(nid VARCHAR(13) PRIMARY KEY, 
 fname VARCHAR(15), 
 lname VARCHAR(15), 
 phone VARCHAR(20),
@@ -12,34 +12,30 @@ nexp_date DATE,
 DoB DATE,
 image_name VARCHAR(100));
 
-CREATE TABLE health_id(hid VARCHAR(11) PRIMARY KEY,
+CREATE TABLE health_id(hid VARCHAR(13) PRIMARY KEY,
 hissue_date DATE,
 hexp_date DATE,
 blood_type VARCHAR(3));
 
-CREATE TABLE driving_license(did VARCHAR(11) PRIMARY KEY,
+CREATE TABLE driving_license(did VARCHAR(13) PRIMARY KEY,
 dissue_date DATE,
 dexp_date DATE,
 li_type CHAR);
 
 CREATE TABLE city(
 cid INT PRIMARY KEY,
-city_name VARCHAR(20));
+city_name VARCHAR(23));
 
-CREATE TABLE addresses(aid VARCHAR(11) PRIMARY KEY,
+CREATE TABLE addresses(aid VARCHAR(13) PRIMARY KEY,
 cid INT,
 address VARCHAR(50),
 FOREIGN KEY (cid) REFERENCES city(cid)
 );
 
-CREATE TABLE relation(nid VARCHAR(11),
-hid VARCHAR(11),
-did VARCHAR(11),
-aid VARCHAR(11),
-FOREIGN KEY (nid) REFERENCES national_id(nid),
-FOREIGN KEY (hid) REFERENCES health_id(hid),
-FOREIGN KEY (did) REFERENCES driving_license(did),
-FOREIGN KEY (aid) REFERENCES addresses(aid)
+CREATE TABLE relation(nid VARCHAR(13),
+hid VARCHAR(13),
+did VARCHAR(13),
+aid VARCHAR(13)
 );
 
 DELIMITER //
