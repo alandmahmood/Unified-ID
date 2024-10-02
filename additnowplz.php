@@ -31,8 +31,7 @@
           ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', '$generatedFileName');
           INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
           INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
-          INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');
-          ";
+          INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
 
           $sql2="INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');";
           mysqli_query($conn, $sql2);
