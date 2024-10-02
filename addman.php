@@ -1,7 +1,4 @@
-<?php require "conn.php";
-echo $_SERVER['PHP_SELF']; 
-?>
-
+<?php require "conn.php" ?>
 <?php
     if(isset($_POST["add"])){
         $firstname=$_POST["first_name"];
