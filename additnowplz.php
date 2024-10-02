@@ -20,15 +20,15 @@
         
         // $filename = $_FILES["file"]['name'];
         // $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        $generatedFileName = "no image";
+        // $generatedFileName = "no image";
         // basename($_FILES["file"]["name"]);
    
         // $destination = 'images/' . $generatedFileName;
         // $file = $_FILES['file']['tmp_name'];
     
 
-        $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
-          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', '$generatedFileName');
+        $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob) VALUES
+          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob');
           INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
           INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
