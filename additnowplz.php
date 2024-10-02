@@ -18,33 +18,25 @@
         $did="D".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($dissdate));
         $aid="A".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y');
         
-        // $filename = $_FILES["file"]['name'];
-        // $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        // $generatedFileName = "no image";
-        // basename($_FILES["file"]["name"]);
-   
+       
         // $destination = 'images/' . $generatedFileName;
         // $file = $_FILES['file']['tmp_name'];
     
 
-        $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob) VALUES
-          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob');
+        $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
+          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', 'noimage');
           INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
           INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
-
-          $sql2="INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');";
-          
-          // if (move_uploaded_file($file, $destination)){
-            
-          if (mysqli_multi_query($conn,$sql)){
-              mysqli_query($conn, $sql2);
-              echo "success";
-              header("location: index.php");
-            }
-            else {
-                echo mysqli_error($conn);
-            }
-            // }
-    // else echo "fucking kill me now";
+    
+        // if (move_uploaded_file($file, $destination)){
+        
+        if (mysqli_multi_query($conn,$sql)){
+            mysqli_query($conn,"INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');");
+            header("location: index.php");
+        }
+        else {
+            echo mysqli_error($conn);
+        }
+    
 ?>
