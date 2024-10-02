@@ -43,4 +43,5 @@
             echo mysqli_error($conn);
         }
     }
+    else echo "fucking kill me now";
 ?>
