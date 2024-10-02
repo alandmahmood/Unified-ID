@@ -29,13 +29,9 @@
         
         $checkSql = "SELECT 1 FROM national_id WHERE nid = '$nid' LIMIT 1";
         $result = mysqli_query($conn, $checkSql);
-        
+
         if (mysqli_num_rows($result) > 0) {
-            $randomNum=rand(10,99);
-        $nid="N".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($issdate)).$randomNum;
-        $hid="H".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($hissdate)).$randomNum;
-        $did="D".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($dissdate)).$randomNum;
-        $aid="A".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y');}
+            echo "dup";}
 
 
         $sql= "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
