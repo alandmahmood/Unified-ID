@@ -34,17 +34,17 @@
           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
 
           $sql2="INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');";
-          mysqli_query($conn, $sql2);
-    
-        // if (move_uploaded_file($file, $destination)){
-        
-        if (mysqli_multi_query($conn,$sql)){
-            echo "success";
-            header("location: index.php");
-        }
-        else {
-            echo mysqli_error($conn);
-        }
-    // }
+          
+          // if (move_uploaded_file($file, $destination)){
+            
+          if (mysqli_multi_query($conn,$sql)){
+              mysqli_query($conn, $sql2);
+              echo "success";
+              header("location: index.php");
+            }
+            else {
+                echo mysqli_error($conn);
+            }
+            // }
     // else echo "fucking kill me now";
 ?>
