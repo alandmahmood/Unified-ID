@@ -20,7 +20,8 @@
         
         // $filename = $_FILES["file"]['name'];
         // $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        // $generatedFileName = basename($_FILES["file"]["name"]);
+        $generatedFileName = "kill me now plz";
+        // basename($_FILES["file"]["name"]);
    
         // $destination = 'images/' . $generatedFileName;
         // $file = $_FILES['file']['tmp_name'];
