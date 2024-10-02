@@ -33,7 +33,8 @@
         
         if (mysqli_multi_query($conn,$sql)){
             mysqli_query($conn,"INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');");
-            header("location: index.php");
+            sleep(5);
+            echo "succ";
         }
         else {
             echo mysqli_error($conn);
