@@ -1,18 +1,18 @@
 
 <?php require "conn.php" ?>
 <?php
-        $firstname=$_GET["first_name"];
-        $lastname=$_GET["last_name"];
-        $phone=$_GET["phone_number"];
-        $gender=$_GET["gender"];
-        $dob=$_GET["date_of_birth"];
-        $city=$_GET["city"];
-        $address=$_GET["address"];
-        $blood=$_GET["blood_type"];
-        $license_type=$_GET["license_type"];
-        $issdate=$_GET["issue_date"];
-        $hissdate=$_GET["issue_date_health"];
-        $dissdate=$_GET["issue_date_license"];
+        $firstname=$_POST["first_name"];
+        $lastname=$_POST["last_name"];
+        $phone=$_POST["phone_number"];
+        $gender=$_POST["gender"];
+        $dob=$_POST["date_of_birth"];
+        $city=$_POST["city"];
+        $address=$_POST["address"];
+        $blood=$_POST["blood_type"];
+        $license_type=$_POST["license_type"];
+        $issdate=$_POST["issue_date"];
+        $hissdate=$_POST["issue_date_health"];
+        $dissdate=$_POST["issue_date_license"];
         
         $randNum = rand(10,99);
         $nid="N".strtoupper(substr($firstname, 0, 1)).strtoupper(substr($lastname, 0, 1)).date('Y', strtotime($dob)).date('Y', strtotime($issdate)).$randNum;
