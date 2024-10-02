@@ -28,11 +28,12 @@
           INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
           INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
+            
+        mysqli_query($conn,"INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');");
     
         // if (move_uploaded_file($file, $destination)){
         
         if (mysqli_multi_query($conn,$sql)){
-            mysqli_query($conn,"INSERT INTO relation VALUES ('$nid','$hid','$did','$aid');");
             sleep(5);
             echo "succ";
         }
