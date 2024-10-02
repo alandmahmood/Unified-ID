@@ -37,6 +37,7 @@
         if (move_uploaded_file($file, $destination)){
         
         if (mysqli_multi_query($conn,$sql)){
+            echo "success";
             header("location: index.php");
         }
         else {
