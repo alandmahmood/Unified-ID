@@ -4,15 +4,15 @@
         header("location: login.php");
     }
     
-    else{
-        if ($_SESSION["access"]=="admin"){
-            header("location: request.php");
-        }
+    // else{
+    //     if ($_SESSION["access"]=="admin"){
+    //         header("location: request.php");
+    //     }
         
-        else{
-            header("location: request.php");
-        }
-    }
+    //     else{
+    //         header("location: request.php");
+    //     }
+    // }
 
 
 
