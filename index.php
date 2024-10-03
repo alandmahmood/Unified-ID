@@ -3,6 +3,10 @@
     if(!isset($_SESSION["access"])){
         header("location: login.php");
     }
+
+    else{
+        echo $_SESSION["access"];
+    }
     
     // else{
     //     if ($_SESSION["access"]=="admin"){
