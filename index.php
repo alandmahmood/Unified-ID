@@ -15,7 +15,7 @@ session_start();
         }
     }
 
-    $inactive = 20; 
+    $inactive = 500; 
 
 $session_life = time() - $_session['testing'];
 
