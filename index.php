@@ -1,7 +1,6 @@
 <?php require "conn.php"; ?>
 <?php 
     if(!isset($_SESSION["access"])){
-        session_start();
         header("location: login.php");
     }
     
