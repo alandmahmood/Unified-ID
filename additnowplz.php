@@ -2,7 +2,7 @@
 <?php require "conn.php" ?>
 <?php
 
-if ($_SESSION["access"] == "user") {
+if ($_SESSION["access"] === "user") {
   $firstname = $_POST["first_name"];
   $lastname = $_POST["last_name"];
   $phone = "null";
