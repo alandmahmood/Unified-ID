@@ -1,28 +1,22 @@
 <?php
-// Check if the login form has been submitted
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+session_start(); // Always start the session before any output
 
-    // Hardcoded credentials
+// Make sure no output is sent before headers
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = htmlspecialchars(trim($_POST['username']));
+    $password = htmlspecialchars(trim($_POST['password']));
+
     $correctUsername = "admin11111";
     $correctPassword = "admin11111";
 
-    session_start();
-    // Check if the entered credentials are correct
-    if ($username == $correctUsername && $password == $correctPassword) {
-        // Successful login
-        
-        $_SESSION["access"]="admin";
-        header("location: index.php");
-        exit();
+    if ($username === $correctUsername && $password === $correctPassword) {
+        $_SESSION["access"] = "admin";
+        header("Location: index.php");
+        exit(); // Stop the script after the redirect
     } else {
-        // Incorrect login
-        
-        
-        $_SESSION["access"]="user";
-        header("location: request.php");
-        exit();
+        $_SESSION["access"] = "user";
+        header("Location: request.php");
+        exit(); // Stop the script after the redirect
     }
 }
 ?>
