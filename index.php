@@ -6,9 +6,10 @@
 
     else {exit;}
 ?>
+
 <?php
 if ($_SESSION["access"]=="admin"){
-    exit;
+    header("location: request.php");
 }
 
 else{
