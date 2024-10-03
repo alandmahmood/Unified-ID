@@ -15,14 +15,7 @@
         }
     }
 
-$inactive = 500; 
 
-$session_life = time() - $_session['testing'];
-
-if($session_life > $inactive)
-{  
- session_destroy(); 
-}
 
 ?>
 
