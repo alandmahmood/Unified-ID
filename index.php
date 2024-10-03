@@ -14,6 +14,16 @@ session_start();
             header("location: request.php");
         }
     }
+
+    $inactive = 20; 
+
+$session_life = time() - $_session['testing'];
+
+if($session_life > $inactive)
+{  
+ session_destroy(); 
+}
+
 ?>
 
 <!DOCTYPE html>
