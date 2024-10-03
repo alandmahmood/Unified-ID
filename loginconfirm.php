@@ -8,17 +8,17 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $correctUsername = "admin11111";
     $correctPassword = "admin11111";
 
+    session_start();
     // Check if the entered credentials are correct
-    if ($username === $correctUsername && $password === $correctPassword) {
+    if ($username == $correctUsername && $password == $correctPassword) {
         // Successful login
         
-        session_start();
         $_SESSION["access"]="admin";
         header("location: index.php");
     } else {
         // Incorrect login
         
-        session_start();
+        
         $_SESSION["access"]="user";
         header("location: request.php");
     }
