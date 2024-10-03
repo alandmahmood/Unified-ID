@@ -24,10 +24,10 @@ if ($_SESSION["access"] == "user") {
 
 
   $sql = "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
-          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', 'noimage');
+          ('$nid','$firstname','$lastname', 'null', '$gender', '$issdate', '$dob', 'noimage');
           INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
-          INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
-          INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');
+          INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','null');
+          INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', 'null');
           INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
 
 
