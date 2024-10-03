@@ -7,7 +7,7 @@ if (!isset($_SESSION["access"])) {
     exit(); // Ensure script execution stops after redirection
 } else {
     if ($_SESSION["access"] == "admin") {
-        header("location: index.php");
+        header("location: Home1.php");
         exit(); // Ensure script execution stops after redirection
     } else {
         header("location: request.php");
