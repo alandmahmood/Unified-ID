@@ -1,22 +1,21 @@
-<?php require "conn.php"; ?>
 <?php 
-    if(!isset($_SESSION["access"])){
-        header("location: login.php");
+require "conn.php"; 
+session_start(); // Make sure to start the session before any headers or HTML output
+
+if (!isset($_SESSION["access"])) {
+    header("location: login.php");
+    exit(); // Ensure script execution stops after redirection
+} else {
+    if ($_SESSION["access"] == "admin") {
+        header("location: request.php");
+        exit(); // Ensure script execution stops after redirection
+    } else {
+        header("location: request.php");
+        exit(); // Ensure script execution stops after redirection
     }
-    
-    else{
-        if ($_SESSION["access"]=="admin"){
-            header("location: request.php");
-        }
-        
-        else{
-            header("location: request.php");
-        }
-    }
-
-
-
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
