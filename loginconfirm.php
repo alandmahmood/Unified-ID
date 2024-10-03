@@ -14,7 +14,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         // Successful login
         
         $_SESSION["access"]="admin";
-        header("location: request.php");
+        header("location: index.php");
     } else {
         // Incorrect login
         
