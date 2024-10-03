@@ -1,7 +1,7 @@
 <?php require "conn.php"; ?>
 <?php 
-session_start();
     if(!isset($_SESSION["access"])){
+        session_start();
         header("location: login.php");
     }
     
@@ -15,7 +15,7 @@ session_start();
         }
     }
 
-    $inactive = 500; 
+$inactive = 500; 
 
 $session_life = time() - $_session['testing'];
 
