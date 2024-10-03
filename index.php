@@ -6,14 +6,11 @@ if (!isset($_SESSION["access"])) {
     header("location: login.php");
     exit(); // Ensure script execution stops after redirection
 } else {
-    if ($_SESSION["access"] == "admin") {
-        header("location: Home1.php");
-        exit(); // Ensure script execution stops after redirection
-    } else {
+    if ($_SESSION["access"] == "user") {
         header("location: request.php");
         exit(); // Ensure script execution stops after redirection
-    }
-}
+        // Ensure script execution stops after redirection
+    }}
 ?>
 
 
