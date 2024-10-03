@@ -3,6 +3,8 @@
     if(!isset($_SESSION["access"])){
         require "login.php";
     }
+
+    else {exit;}
 ?>
 <?php
 if ($_SESSION["access"]=="admin"){
