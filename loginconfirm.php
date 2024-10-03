@@ -15,12 +15,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         
         $_SESSION["access"]="admin";
         header("location: index.php");
+        exit();
     } else {
         // Incorrect login
         
         
         $_SESSION["access"]="user";
         header("location: request.php");
+        exit();
     }
 }
 ?>
