@@ -1,29 +1,4 @@
-<?php
-// Check if the login form has been submitted
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    // Hardcoded credentials
-    $correctUsername = "admin11111";
-    $correctPassword = "admin11111";
-
-    // Check if the entered credentials are correct
-    if ($username === $correctUsername && $password === $correctPassword) {
-        // Successful login
-        
-        session_start();
-        $_SESSION["access"]="admin";
-        header("location: index.php");
-    } else {
-        // Incorrect login
-        
-        session_start();
-        $_SESSION["access"]="user";
-        header("location: request.php");
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,7 +122,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                                     </div>
                                     <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                         <div class="card-body p-4 p-lg-5 text-black">
-                                            <form method="POST" action="login.php">
+                                            <form method="POST" action="loginconfirm.php">
                                                 <div class="d-flex align-items-center mb-3 pb-1">
                                                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                                                     <span class="h1 fw-bold mb-0">Universal ID</span>
