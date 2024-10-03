@@ -1,13 +1,9 @@
 <?php require "conn.php"; ?>
 <?php 
     if(!isset($_SESSION["access"])){
-        include "login.php";
+        header("location: login.php");
     }
-
-    else {exit;}
-?>
-
-<?php
+    
 if ($_SESSION["access"]=="admin"){
     header("location: request.php");
 }
