@@ -1,4 +1,5 @@
-<?php require "conn.php"; ?>
+<?php require "conn.php"; 
+echo $_SESSION["access"];?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
