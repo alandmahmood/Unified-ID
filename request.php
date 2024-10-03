@@ -38,7 +38,7 @@
 </div>
 
     <div class="max-w-5xl mx-auto p-4">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="addditnowplz.php" method="post" enctype="multipart/form-data">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="additnowplz.php" method="post" enctype="multipart/form-data">
             <!-- National ID Section -->
             <div class="mb-6">
                 <h2 class="text-lg font-semibold mb-4 text-gray-900">Request ID</h2>
