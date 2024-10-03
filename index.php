@@ -3,7 +3,8 @@
     if(!isset($_SESSION["access"])){
         header("location: login.php");
     }
-    
+?>
+<?php    
 if ($_SESSION["access"]=="admin"){
     header("location: request.php");
 }

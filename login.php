@@ -18,7 +18,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         // Incorrect login
         session_start();
         $_SESSION["access"]="user";
-        header("location: index.php");
+        header("location: request.php");
     }
 }
 ?>
