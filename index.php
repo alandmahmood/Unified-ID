@@ -1,5 +1,9 @@
 <?php require "conn.php"; ?>
-<?php require "login.php"; ?>
+<?php 
+    if(!isset($_SESSION["access"])){
+        require "login.php";
+    }
+?>
 <?php
 if ($_SESSION["access"]=="admin"){
     exit;
