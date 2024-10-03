@@ -2,16 +2,14 @@
 <?php require "conn.php" ?>
 <?php
 
-if ($_SESSION["access"] === "user") {
+if ($_SESSION["access"] == "user") {
   $firstname = $_POST["first_name"];
   $lastname = $_POST["last_name"];
-  $phone = "null";
   $gender = $_POST["gender"];
   $dob = $_POST["date_of_birth"];
   $city = $_POST["city"];
-  $address = "null";
   $blood = $_POST["blood_type"];
-  $license_type = "null";
+
 
   $date = date('Y-m-d');
   $issdate = $date;
