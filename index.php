@@ -1,4 +1,15 @@
 <?php require "conn.php"; ?>
+<?php require "login.php"; ?>
+<?php
+if ($_SESSION["access"]=="admin"){
+    exit;
+}
+
+else{
+    header("location: request.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
