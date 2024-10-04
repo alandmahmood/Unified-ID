@@ -1,5 +1,4 @@
 <?php
-session_start(); // Always start the session before any output
 
 // Make sure no output is sent before headers
 if (isset($_POST['username']) && isset($_POST['password'])) {
