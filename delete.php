@@ -7,6 +7,9 @@ require "conn.php";
                 $query = "SELECT * from info where nid='$nid'";
                 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
                 $row = mysqli_fetch_assoc($result);
+                $hid = $row["hid"];
+                $did = $row["did"];
+                $aid = $row["aid"];
             }
 
             $nid=$row["nid"];
