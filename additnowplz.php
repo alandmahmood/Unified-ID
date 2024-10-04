@@ -20,9 +20,9 @@ $nid = "N" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname,
 $hid = "H" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y', strtotime($hissdate)) . $randNum;
 $did = "D" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y', strtotime($dissdate)) . $randNum;
 $aid = "A" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y') . $randNum;
-if($_SESSION["access"]=="user"){
+
 $_SESSION["user"]=$nid;
-}
+
 
 $sql = "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
           ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', 'noimage');
