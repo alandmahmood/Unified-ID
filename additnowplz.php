@@ -2,45 +2,6 @@
 <?php require "conn.php" ?>
 <?php
 
-if ($_SESSION["access"] == "user") {
-  $firstname = $_POST["first_name"];
-  $lastname = $_POST["last_name"];
-  $gender = $_POST["gender"];
-  $dob = $_POST["date_of_birth"];
-  $city = $_POST["city"];
-  $blood = $_POST["blood_type"];
-
-
-  $date = date('Y-m-d');
-  $issdate = $date;
-  $hissdate = $date;
-  $dissdate = $date;
-
-  $randNum = rand(100, 999);
-  $nid = "N" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y', strtotime($issdate)) . $randNum;
-  $hid = "H" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y', strtotime($hissdate)) . $randNum;
-  $did = "D" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y', strtotime($dissdate)) . $randNum;
-  $aid = "A" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y') . $randNum;
-
-
-  $sql = "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
-          ('$nid','$firstname','$lastname', 'null', '$gender', '$issdate', '$dob', 'noimage');
-          INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
-          INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','null');
-          INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', 'null');
-          INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
-
-
-
-  if (mysqli_multi_query($conn, $sql)) {
-    sleep(1);
-    header("location: index.php");
-  } else {
-    echo mysqli_error($conn);
-  }
-} 
-
-else {
   $firstname = $_POST["first_name"];
   $lastname = $_POST["last_name"];
   $phone = $_POST["phone_number"];
@@ -76,6 +37,6 @@ else {
   } else {
     echo mysqli_error($conn);
   }
-}
+
 
 ?>

@@ -106,6 +106,16 @@
                     Add
                 </button>
             </div>
+
+            <input hidden name="issue_date" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="issueDate" type="date" required value="<?php echo date('Y-m-d');?>">
+            <input hidden name="issue_date_health" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="issueDate" type="date" required value="<?php echo date('Y-m-d');?>">
+            <input hidden name="issue_date_license" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="issueDate" type="date" required value="<?php echo date('Y-m-d');?>">
+            <input hidden name="phone_number" class=" form-control appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phoneNumber" type="tel" value="Not Provided" required>
+            <input hidden name="address" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" placeholder="Address" value="Not Provided" required>
+            <input hidden name="license_type" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="licenseType" type="text" value="Not Provided" required>
+                
+               
+                   
         </form>
     </div>
     <!-- Footer -->
