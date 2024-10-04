@@ -3,22 +3,22 @@
     <div class="w-full px-4 py-12 mx-auto space-y-8 sm:px-6 lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2">
             <div class="px-5 py-2">
-                <a href="home1.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
+                <a href="Home1.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
                     Home
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="nationalID.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
+                <a href='NationalID.php?nid=<?php echo $row["nid"]; ?>' class="text-base leading-6 text-gray-400 hover:text-gray-900">
                     National ID
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="HealthID.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
+                <a href='HealthID.php?hid=<?php echo $row["hid"]; ?>' class="text-base leading-6 text-gray-400 hover:text-gray-900">
                     Health ID
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="DrivingID.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
+                <a href='DrivingID.php?did=<?php echo $row["did"]; ?>' class="text-base leading-6 text-gray-400 hover:text-gray-900">
                     Driving License ID
                 </a>
             </div>
