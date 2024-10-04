@@ -17,8 +17,8 @@ require "conn.php";
             $did=$row["did"];
             $aid=$row["aid"];
             $sql="DELETE FROM national_id WHERE nid=$nid;
-            DELETE FROM national_id WHERE hid=$hid;
-            DELETE FROM health_id WHERE did=$did;
+            DELETE FROM health_id WHERE hid=$hid;
+            DELETE FROM driving_license WHERE did=$did;
             DELETE FROM addresses WHERE aid=$aid;
             DELETE FROM relation WHERE nid=$nid;";
             if(mysqli_multi_query($conn, $sql)){
