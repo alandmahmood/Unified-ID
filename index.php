@@ -4,12 +4,20 @@ session_start(); // Make sure to start the session before any headers or HTML ou
 if (!isset($_SESSION["access"])) {
     header("location: login.php");
     exit(); // Ensure script execution stops after redirection
+
 } else {
     if ($_SESSION["access"] == "user") {
-        header("location: request.php");
+        if(isset($_SESSION["user"])){
+            $nid=$_SESSION["user"];
+            header("location: NationalID.php?nid=$nid");
+        }
+        else{
+            header("location: request.php");
+        }
         exit(); // Ensure script execution stops after redirection
         // Ensure script execution stops after redirection
     }}
+
 ?>
 
 <!DOCTYPE html>
@@ -130,6 +138,7 @@ if (!isset($_SESSION["access"])) {
             <a href='HealthID.php?hid=<?php echo $row["hid"]; ?>'>Health ID</a>
             <a href='DrivingID.php?did=<?php echo $row["did"]; ?>'>Driving License ID</a>
             <a  href="add.php">Add Citizen</a>
+            <a href="reset.php?nid=<?php echo $row["nid"]; ?>" class="btn btn-danger">Delete All</a>
         </div>
                                         <!-- Theme Toggle Button with Icons -->
         <button id="theme-toggle" class="ml-4 px-3 py-1 rounded focus:outline-none" aria-label="Toggle Theme">
