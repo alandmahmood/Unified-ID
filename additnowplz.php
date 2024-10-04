@@ -32,9 +32,9 @@ $sql = "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, i
 
 
 if (mysqli_multi_query($conn, $sql)) {
-  $sql2 = "INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
   sleep(1);
-  mysqli_query($conn, $sql);
+  $sql2 = "INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
+  mysqli_query($conn, $sql2);
   sleep(1);
   if ($_SESSION["access"] == "admin") {
     header("location: index.php");
