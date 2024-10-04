@@ -80,7 +80,7 @@ if (isset($_GET["nid"])) {
                         </div>
                         <div class="col-12 col-md-3 d-flex justify-content-center align-items-center rounded-3xl" 
                              style="background-color:#1f72a2;">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=<?php echo "http://u-id.online/NationalID.php?nid=" . $row['nid'] ?>&amp;size=300x300" 
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=<?php echo "http://u-id.online/NationalID.php?nid=" . $row['nid'] ?>&amp;size=600x300" 
                                  class="qr-code img-thumbnail img-responsive" />
                         </div>
                     </div>
