@@ -2,7 +2,7 @@
 
 require "conn.php";
           if(isset($_GET["nid"])){
-            if (isset($_GET["nid"])) {
+            
                 $nid = $_GET["nid"];
                 $query = "SELECT * from info where nid='$nid'";
                 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -10,7 +10,7 @@ require "conn.php";
                 $hid = $row["hid"];
                 $did = $row["did"];
                 $aid = $row["aid"];
-            }
+            
 
             $nid=$row["nid"];
             $hid=$row["hid"];
