@@ -117,11 +117,32 @@ if (isset($_GET["nid"])) {
 
 
     <!-- Main Content -->
-    <div class="container parent d-flex justify-content-center align-items-center h-100 rounded-3xl">
-        <div class="container bg-gray-200 shadow-lg rounded-3xl w-100 w-md-75 w-lg-50">
+    
+        
+        
+        <div class="container parent d-flex justify-content-center align-items-center h-100 ">
+        <div class="card  p-4 w-100 bg-gray-700">
+            <h2 class="text-center mb-4">Submit a Scan</h2>
+            <p class="text-center mb-5">Please upload your scanned documents. Accepted formats: PDF, JPG, PNG (max 5MB).</p>
 
+            <div class="upload-area">
+                <input type="file" id="fileInput" accept=".pdf, .jpg, .jpeg, .png" multiple>
+                <label for="fileInput" class="btn btn-outline-primary mt-2">Browse Files</label>
+                <p>Or drag and drop your files here</p>
+            </div>
+
+            <div class="preview-area" id="previewArea" style="display: none;">
+                <h5>Preview:</h5>
+                <div id="previewImages"></div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button id="submitBtn" class="btn btn-success">Submit</button>
+            </div>
+         </div>
         </div>
-    </div>
+     
+
 <!-- Foooter -->
 <?php include 'footer.php'; ?>
     <!-- Scripts -->

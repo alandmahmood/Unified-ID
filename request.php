@@ -1,5 +1,4 @@
-<?php require "conn.php"; 
-echo $_SESSION["access"];?>
+<?php require "conn.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +32,7 @@ echo $_SESSION["access"];?>
     </h1>
     
     <!-- Description -->
-    <h2 class="text-center text-gray-700 text-base md:text-2xl">
+    <h2 class="text-center text-gray-900 text-base md:text-2xl">
         This form will create a demo version of the ID. Please ensure to update and verify it later.
     </h2>
 </div>

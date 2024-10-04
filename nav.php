@@ -7,18 +7,7 @@
     <style>
         /* Default Dark Theme Variables */
         :root {
-            --bg-color: #074173;
-            --navbar-bg-color: #113f59;
-            --text-color: #ffffff;
-            --card-bg-color: #113f59;
-            --btn-outline-dark-border: #ffffff;
-            --btn-outline-dark-text: #ffffff;
-            --btn-outline-dark-hover-bg: #ffffff;
-            --btn-outline-dark-hover-text: #074173;
-        }
 
-        /* Light Theme Variables */
-        .light-mode {
             --bg-color: #ffffff;
             --navbar-bg-color: #113f59;
             --text-color: #ffffff;
@@ -27,6 +16,19 @@
             --btn-outline-dark-text: #000000;
             --btn-outline-dark-hover-bg: #000000;
             --btn-outline-dark-hover-text: #ffffff;
+        }
+
+        /* Light Theme Variables */
+        .light-mode {
+            --bg-color: #074173;
+            --navbar-bg-color: #113f59;
+            --text-color: #ffffff;
+            --card-bg-color: #113f59;
+            --btn-outline-dark-border: #ffffff;
+            --btn-outline-dark-text: #ffffff;
+            --btn-outline-dark-hover-bg: #ffffff;
+            --btn-outline-dark-hover-text: #074173;
+
         }
 
         /* Apply Variables */
@@ -132,13 +134,13 @@
 <body>
     <!-- Navbar -->
     <div class="navbar" >
-        <div class="logo"><a href='index.php'>Universal ID</a></div>
+        <div class="logo"><a href='login.php'>Universal ID</a></div>
         <div class="navbar-links">
             <a href='Home1.php'>Home</a>
-            <a href='contact.php'>Contact</a>
             <a href='nationalID.php?nid=<?php echo $row["nid"]; ?>'>National ID</a>
             <a href='HealthID.php?hid=<?php echo $row["hid"]; ?>'>Health ID</a>
             <a href='DrivingID.php?did=<?php echo $row["did"]; ?>'>Driving License ID</a>
+            <a href='request.php'>Request ID</a>
         </div>
         <!-- Theme Toggle Button with Icons -->
         <button id="theme-toggle" class="ml-4 px-3 py-1 rounded focus:outline-none" aria-label="Toggle Theme">
@@ -169,7 +171,6 @@
                 moonIcon.style.display = 'inline';
             }
         }
-
         // Apply saved theme on page load
         if (currentTheme === 'light') {
             document.body.classList.add('light-mode');
@@ -179,6 +180,15 @@
             document.body.classList.remove('light-mode');
             updateIcons('dark');
         }
+        // // Apply saved theme on page load
+        // if (currentTheme === 'dark') {
+        //     document.body.classList.add('dark-mode');
+        //     updateIcons('dark');
+        // } else {
+        //     // Default to dark mode if no theme is set
+        //     document.body.classList.remove('dark-mode');
+        //     updateIcons('light');
+        // }
 
         // Toggle theme on button click
         toggleButton.addEventListener('click', () => {

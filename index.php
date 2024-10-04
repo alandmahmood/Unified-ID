@@ -1,5 +1,4 @@
-<?php 
-require "conn.php"; 
+<?php require "conn.php"; 
 session_start(); // Make sure to start the session before any headers or HTML output
 
 if (!isset($_SESSION["access"])) {
@@ -12,7 +11,6 @@ if (!isset($_SESSION["access"])) {
         // Ensure script execution stops after redirection
     }}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +125,7 @@ if (!isset($_SESSION["access"])) {
        <div class="w-full flex flex-row justify-between text-2xl py-4 px-6 rounded-1xl shadow-lg text-white" style="background-color: #113f59;">
 <div class="text-2xl"><a href='index.php'>Universal ID</a></div>
         <div class="flex flex-row space-x-4">
-            <a href='Home.php'>Home</a>
+            <a href='Home1.php'>Home</a>
             <a href='nationalID.php?nid=<?php echo $row["nid"]; ?>'>National ID</a>
             <a href='HealthID.php?hid=<?php echo $row["hid"]; ?>'>Health ID</a>
             <a href='DrivingID.php?did=<?php echo $row["did"]; ?>'>Driving License ID</a>

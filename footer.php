@@ -8,11 +8,6 @@
                 </a>
             </div>
             <div class="px-5 py-2">
-                <a href="contact.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
-                    Contact
-                </a>
-            </div>
-            <div class="px-5 py-2">
                 <a href="nationalID.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
                     National ID
                 </a>
@@ -25,6 +20,11 @@
             <div class="px-5 py-2">
                 <a href="DrivingID.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
                     Driving License ID
+                </a>
+            </div>
+            <div class="px-5 py-2">
+                <a href="request.php" class="text-base leading-6 text-gray-400 hover:text-gray-900">
+                    Request ID
                 </a>
             </div>
 
@@ -53,10 +53,14 @@
                 </svg>
             </a>
         </div>
-        <p class="mt-8 text-base leading-6 text-center text-gray-400">
-            Contact Us: uiniversalid@gmail.com<br> 
-            &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace; 07702224589
-        </p>
+        <p class="mt-4 mb-4 text-base leading-6 text-center text-gray-400">
+    Contact Us: 
+    <span class="d-block">aland.aramf21@komar.edu.iq</span>
+    <span class="d-block">rawezh.starf21@komar.edu.iq</span>
+    <span class="d-block">rand.burhanf21@komar.edu.iq</span>
+    <span class="d-block">07702224589</span>
+            </p>
+
         <p class="mt-8 text-base leading-6 text-center text-gray-400">
             © 2023 Universal ID, Inc. All rights reserved.
         </p>
