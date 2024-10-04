@@ -33,7 +33,12 @@
 
   if (mysqli_multi_query($conn, $sql)) {
     sleep(1);
-    header("location: index.php");
+    if($_SESSION["access"]=="admin"){
+      header("location: index.php");
+    }
+    else{
+      header("location: NationalID.php?nid=$nid");
+    }
   } else {
     echo mysqli_error($conn);
   }
