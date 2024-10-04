@@ -7,12 +7,12 @@ if (!isset($_SESSION["access"])) {
 
 } else {
     if ($_SESSION["access"] == "user") {
-        if(isset($_SESSION["user"])){
-            $nid=$_SESSION["user"];
-            header("location: NationalID.php?nid=$nid");
+        if(!isset($_SESSION["user"])){
+            header("location: request.php");
         }
         else{
-            header("location: request.php");
+            $nid=$_SESSION["user"];
+            header("location: NationalID.php?nid=$nid");
         }
         exit(); // Ensure script execution stops after redirection
         // Ensure script execution stops after redirection
