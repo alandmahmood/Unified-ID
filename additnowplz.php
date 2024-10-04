@@ -28,12 +28,11 @@ $sql = "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, i
           INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
 
+$sql2 = "INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
 
 
 
 if (mysqli_multi_query($conn, $sql)) {
-  sleep(1);
-  $sql2 = "INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
   mysqli_query($conn, $sql2);
   sleep(1);
   if ($_SESSION["access"] == "admin") {
