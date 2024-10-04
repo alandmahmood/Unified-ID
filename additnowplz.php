@@ -21,28 +21,60 @@ $hid = "H" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname,
 $did = "D" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y', strtotime($dissdate)) . $randNum;
 $aid = "A" . strtoupper(substr($firstname, 0, 1)) . strtoupper(substr($lastname, 0, 1)) . date('Y', strtotime($dob)) . date('Y') . $randNum;
 
+$sql1 = "INSERT INTO national_id(nid, fname, lname, phone, gender, nissue_date, dob, image_name) 
+         VALUES ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', 'noimage');";
 
-$sql = "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
-          ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', 'noimage');
-          INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
-          INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
-          INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
+$sql2 = "INSERT INTO health_id(hid, hissue_date, blood_type) 
+         VALUES ('$hid', '$hissdate', '$blood');";
 
-$sql2 = "INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
+$sql3 = "INSERT INTO driving_license(did, dissue_date, li_type) 
+         VALUES ('$did', '$dissdate', '$license_type');";
 
+$sql4 = "INSERT INTO addresses(aid, cid, `address`) 
+         VALUES ('$aid', '$city', '$address');";
 
+$sql5 = "INSERT INTO relation(nid, hid, did, aid) 
+         VALUES ('$nid', '$hid', '$did', '$aid');";
 
-if (mysqli_multi_query($conn, $sql)) {
-  mysqli_query($conn, $sql2);
-  sleep(1);
-  if ($_SESSION["access"] == "admin") {
-    header("location: index.php");
-  } else {
-    header("location: NationalID.php?nid=$nid");
-  }
+// Execute each query
+if (mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3) && mysqli_query($conn, $sql4)) {
+    // If all inserts are successful, insert into the relation table
+    if (mysqli_query($conn, $sql5)) {
+        // Redirect based on user access
+        if ($_SESSION["access"] == "admin") {
+            header("Location: index.php");
+        } else {
+            header("Location: NationalID.php?nid=$nid");
+        }
+        exit(); // Stop further script execution
+    } else {
+        echo "Error inserting into relation table: " . mysqli_error($conn);
+    }
 } else {
-  echo mysqli_error($conn);
+    echo "Error inserting data: " . mysqli_error($conn);
 }
+
+// $sql = "INSERT INTO national_id(nid, fname,lname,phone,gender,nissue_date,dob, image_name) VALUES
+//           ('$nid','$firstname','$lastname', '$phone', '$gender', '$issdate', '$dob', 'noimage');
+//           INSERT INTO health_id(hid, hissue_date, blood_type) VALUES ('$hid','$hissdate', '$blood');
+//           INSERT INTO driving_license(did, dissue_date, li_type) VALUES ('$did','$dissdate','$license_type');
+//           INSERT INTO addresses(aid, cid, `address`) VALUES ('$aid', '$city', '$address');";
+
+// $sql2 = "INSERT INTO relation(nid,hid,did,aid) VALUES ('$nid','$hid','$did','$aid');";
+
+
+
+// if (mysqli_multi_query($conn, $sql)) {
+//   mysqli_query($conn, $sql2);
+//   sleep(1);
+//   if ($_SESSION["access"] == "admin") {
+//     header("location: index.php");
+//   } else {
+//     header("location: NationalID.php?nid=$nid");
+//   }
+// } else {
+//   echo mysqli_error($conn);
+// }
 
 
 ?>
