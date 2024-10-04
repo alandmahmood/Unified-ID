@@ -5,7 +5,7 @@ require "conn.php";
             TRUNCATE TABLE health_id;
             TRUNCATE TABLE driving_license;
             TRUNCATE TABLE addresses;
-            TRUNCATE TABLE relatioins;
+            TRUNCATE TABLE relations;
             ";
             if(mysqli_multi_query($conn, $sql)){
               header("location: index.php");
