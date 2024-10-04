@@ -169,6 +169,7 @@ if (!isset($_SESSION["access"])) {
                         <a href="NationalID.php?nid=<?php echo $row["nid"]; ?>" class="btn btn-primary btn-sm">National ID</a>
                         <a href="HealthID.php?hid=<?php echo $row["hid"]; ?>" class="btn btn-primary btn-sm">Health ID</a>
                         <a href="DrivingID.php?did=<?php echo $row["did"]; ?>" class="btn btn-primary btn-sm">Driving License</a>
+                        <a href="delete.php?id=<?php echo $row["nid"]; ?>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 <?php  
