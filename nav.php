@@ -145,7 +145,7 @@ if (isset($_GET["hid"])) {
         <div class="logo"><a href='login.php'>Universal ID</a></div>
         <div class="navbar-links">
             <a href='Home1.php'>Home</a>
-            <a href='nationalID.php?nid=<?php echo $row["nid"]; ?>'>National ID</a>
+            <a href='NationalID.php?nid=<?php echo $row["nid"]; ?>'>National ID</a>
             <a href='HealthID.php?hid=<?php echo $row["hid"]; ?>'>Health ID</a>
             <a href='DrivingID.php?did=<?php echo $row["did"]; ?>'>Driving License ID</a>
             <a href='request.php'>Request ID</a>
