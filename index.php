@@ -1,5 +1,5 @@
 <?php require "conn.php"; // Make sure to start the session before any headers or HTML output
-
+session_start(); 
 if (!isset($_SESSION["access"])) {
     header("location: login.php");
     exit(); // Ensure script execution stops after redirection

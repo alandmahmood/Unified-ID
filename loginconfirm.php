@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 // Make sure no output is sent before headers
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = htmlspecialchars(trim($_POST['username']));

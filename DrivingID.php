@@ -1,4 +1,5 @@
 <?php require "conn.php";
+session_start(); 
 if (isset($_GET["did"])) {
     $did = $_GET["did"];
     $query = "SELECT * from info where did='$did'";

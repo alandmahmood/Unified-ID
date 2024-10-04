@@ -1,5 +1,6 @@
 <?php 
 require "conn.php";
+session_start(); 
 if (isset($_GET["nid"])) {
     $nid = mysqli_real_escape_string($conn, $_GET["nid"]); // Improved security
     $query = "SELECT * FROM info WHERE nid='$nid'";

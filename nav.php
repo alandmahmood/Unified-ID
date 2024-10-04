@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 if (isset($_GET["hid"])) {
     $hid = $_GET["hid"];
     $query = "SELECT * from info where hid='$hid'";

@@ -1,5 +1,6 @@
 
-<?php require "conn.php" ?>
+<?php require "conn.php";
+session_start();  ?>
 <?php
 
 $firstname = $_POST["first_name"];
