@@ -16,11 +16,11 @@ require "conn.php";
             $hid=$row["hid"];
             $did=$row["did"];
             $aid=$row["aid"];
-            $sql="DELETE FROM national_id WHERE id=$nid;
-            DELETE FROM national_id WHERE id=$hid;
-            DELETE FROM health_id WHERE id=$did;
-            DELETE FROM addresses WHERE id=$aid;
-            DELETE FROM relation WHERE id=$nid;";
+            $sql="DELETE FROM national_id WHERE nid=$nid;
+            DELETE FROM national_id WHERE hid=$hid;
+            DELETE FROM health_id WHERE did=$did;
+            DELETE FROM addresses WHERE aid=$aid;
+            DELETE FROM relation WHERE nid=$nid;";
             if(mysqli_multi_query($conn, $sql)){
               header("location: index.php");
             }
