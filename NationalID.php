@@ -1,4 +1,5 @@
 <?php require "conn.php";
+session_start(); 
 if (isset($_GET["nid"])) {
     $nid = $_GET["nid"];
     $query = "SELECT * from info where nid='$nid'";
