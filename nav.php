@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET["hid"])) {
+    $hid = $_GET["hid"];
+    $query = "SELECT * from info where hid='$hid'";
+    $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+    $row = mysqli_fetch_assoc($result);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
