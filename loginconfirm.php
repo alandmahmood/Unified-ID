@@ -6,8 +6,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = htmlspecialchars(trim($_POST['username']));
     $password = htmlspecialchars(trim($_POST['password']));
 
-    $correctUsername = "admin11111";
-    $correctPassword = "admin11111";
+    $correctUsername = "admin";
+    $correctPassword = "UniIDadmin";
 
     if ($username === $correctUsername && $password === $correctPassword) {
         $_SESSION["access"] = "admin";
